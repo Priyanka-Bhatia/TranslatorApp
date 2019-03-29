@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Translator</title>
+<link rel="stylesheet"  type="text/css" href="static/bootstrap.min.css"/>
+<script src="static/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="static/style.css"/>
+<style>
+#form{
+  background-color:#ffc0d0;
+  min-height: 600px;
+  padding: 10px 40px 40px 40px;
+  margin:  auto
+}
+.first{
+  font-size:25px;
+  font-family: 'Lobster', cursive;
+  color:#9873b9;
+}
+.container {
+  margin-top: 10px;
+}
+
+body{
+     background-image:url(static/Languages.jpg);
+     font-family: 'Montserrat', sans-serif;
+}
+
+label{
+   font-family: 'Coiny', cursive;
+   font-family: 'Dancing Script', cursive;
+   color:#9873b9;
+   font-size:18px;
+ }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script type="text/javascript">
+ var $orgText=$('data1');
+$(document).ready(()=>{
+  $('#firstId').click(()=>{
+    $.ajax({
+      url:'/user',
+      type:'POST',
+      dataType:JSON,
+      success:function(data){
+        console.log("value of "+data);
+         console.log("ajax call success");
+       },
+       error:function(error){
+       console.log(error);
+     }
+   });
+  });
+});
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4  col-md-offset-3" id="form">
+        <center class="first"><b>Language Translate</b></center>
+        <form  action="/users" method="post">
+               <div class="form-group">
+                <label>Write your text</label>
+                <textarea id="data1" class="form-control" name="name1" rows="4" cols="50" placeholder="Type your text"></textarea>
+               </div >
+               <br/>
+               <br>
+
+              <div class="form-group">
+              <input  type="submit"  name="Translate123" value="Translate"/>
+              <br>
+              </div >
+              <div class="form-group">
+              <label>
+              Translated Text</label>
+              <textarea id="data2" class="form-control" name="translatedValue" rows="4" cols="50"></textarea>
+              </div >
+            <br/>
+</form>
+<input  type="submit" id = "firstId"  name="Translate123" value="Translate"/>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

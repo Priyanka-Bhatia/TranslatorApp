@@ -1,0 +1,27 @@
+{
+  "name": "TranslatorApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node TranslatorIndex.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/translate": "^2.1.3",
+    "@k3rn31p4nic/google-translate-api": "^1.0.5",
+    "ajax": "0.0.4",
+    "casting": "0.0.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "google-translate-api": "^2.3.0",
+    "jsdom": "^13.2.0",
+    "language-translator": "^1.2.2",
+    "nodemon": "^1.18.10",
+    "pug": "^2.0.3",
+    "translate": "^1.0.4",
+    "watson-developer-cloud": "^3.18.1"
+  }
+}
